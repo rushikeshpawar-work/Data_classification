@@ -1,0 +1,86 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    padding: 20px;
+  }
+  
+  /* Heading Styles */
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  th {
+    background: #2c3e50;
+    color: white;
+  }
+  
+  /* Input Field Styles */
+  input {
+    width: 100%;
+    border: none;
+    padding: 6px;
+    box-sizing: border-box;
+  }
+  
+  /* Button Styles */
+  .btn {
+    margin-top: 20px;
+    padding: 10px 16px;
+    border: none;
+    background: #3498db;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background: #2980b9;
+  }
+  
+  /* Prediction Box Styles */
+  .prediction-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ecf0f1;
+    border-radius: 6px;
+  }
+  
+  /* Prediction Table Specific Styles */
+  #df-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  #df-table-container th,
+  #df-table-container td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  #df-table-container th {
+    background-color: #2c3e50;
+    color: white;
+  }
+  

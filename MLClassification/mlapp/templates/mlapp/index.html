@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ML Prediction Table</title>
+
+  <!-- External CSS File -->
+  <link rel="stylesheet" href="{% static 'mlapp/css/styles.css' %}">
+
+  <!-- Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>      
+
+  <h1>🏥 Medical Record Prediction App</h1>
+
+  <button class="btn" onclick="addRow()">➕ Add Patient Record</button>
+
+  <form id="prediction-form">
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Blood Type</th>
+          <th>Medical Condition</th>
+          <th>Date of Admission</th>
+          <th>Doctor</th>
+          <th>Hospital</th>
+          <th>Insurance Provider</th>
+          <th>Billing Amount</th>
+          <th>Room Number</th>
+          <th>Admission Type</th>
+          <th>Discharge Date</th>
+          <th>Medication</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Rows will be added here -->
+      </tbody>
+    </table>
+
+    <!-- ML Model Selection -->
+<div class="model-selector" style="margin: 20px 0;">
+  <label for="ml-models"><strong>Choose ML Model:</strong></label>
+  <select id="ml-models" onchange="onModelChange()">
+    <option value="logistic_regression">Logistic Regression</option>
+    <option value="decision_tree">Decision Tree</option>
+    <option value="random_forest">Random Forest</option>
+    <option value="svm">Support Vector Machine</option>
+    <option value="knn">K-Nearest Neighbors</option>
+    <option value="naive_bayes">Naive Bayes</option>
+    <option value="xgboost">XGBoost</option>
+    <option value="neural_network">Neural Network</option>
+  </select>
+</div>
+
+    <button class="btn" type="submit">🚀 Submit for Prediction</button>
+  </form>
+  
+<!-- Prediction Results Display -->
+<div id="prediction-results" class="prediction-box" style="margin-top: 20px;"></div>
+
+  <!-- Prediction Table Section -->
+  <div class="prediction-box">
+    <h3>📄 Prediction Table</h3>
+    <div id="df-table-container"></div>
+  </div>
+
+  <!-- Prediction Model Accuracy Chart -->
+  <div style="max-width: 300px; margin: 40px auto;">
+    <canvas id="accuracyChart"></canvas>
+  </div>
+
+  <!-- External JS File -->
+  <script src="{% static 'mlapp/js/script.js' %}"></script>
+
+  <!-- Call addRow only after DOM is loaded -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      addRow();
+    });
+  </script>
+
+</body>
+</html>
