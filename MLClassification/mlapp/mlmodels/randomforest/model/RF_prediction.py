@@ -73,6 +73,6 @@ def predict_and_annotate_df(model_path, inputdf):
 
     average_confidence = result_df['Confidence(%)'].mean()
 
-    return result_df,average_confidence
+    return result_df,np.round(average_confidence)
 
 

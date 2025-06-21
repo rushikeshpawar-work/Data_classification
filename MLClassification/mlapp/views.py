@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import pandas as pd
 from mlapp.mlmodels.randomforest.model.RF_prediction import predict_and_annotate_df
+from mlapp.mlmodels.catboost.model.cb_prediction import predict_and_append
 
 def home(request):
     return render(request, 'mlapp/index.html')  # Make sure this template exists
@@ -26,6 +27,9 @@ def predict(request):
             if model_choice == 'random_forest':
                 model_path = 'mlapp/mlmodels/randomforest/data/RF_model.joblib'
                 result_df,avg_confidence = predict_and_annotate_df(model_path, df)
+
+            elif model_choice == 'CatBoost':
+                result_df,avg_confidence = predict_and_append(df)
 
             else:
                 return JsonResponse({'status': 'error', 'message': f'Model {model_choice} is not implemented yet'}, status=400)
